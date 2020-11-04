@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基本模板</title>
+</head>
+<body>
+    <div id="app">
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+    </div>
+<script src="../../js/vue.js"></script>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            }
+            else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            }
+            else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = null;
+            }
+        },
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+        preventDefault: function (event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false;
+            }
+        }
+    }
+
+</script>
+<script>
+    const app=new Vue({
+        el:"#app",
+        data:{
+            message:"123"
+        },
+        methods:{
+
+            }
+    })
+    //ES5只有function有作用域，if和for都没有块级作用域的概念，很多时候必须借助function的作用域来解决应用外面变量的问题
+    //ES6中，加入了let，let使if和for有了块级作用域。
+    //1.变量作用域：变量在什么范围内可用。
+    //2.函数有自己的作用域作用域。闭包能解决很多问题
+</script>
+<script>
+    //这里打印出来是四个 第四个按钮被打印。因为没有块级作用域，回调的时候所有的i都被最后一个i替代，也就是4
+    // var btns=document.getElementsByTagName('button');
+    // for (var i=0;i<btns.length;i++){
+    //   btns[i].addEventListener('click',function(){
+    //       console.log("第" + i + "个按钮被打印");
+    //   })
+    // }
+    //解决方法一  通过闭包。因为闭包是个函数，拥有自己的作用域，每个i赋值后就被调用
+    // var btns=document.getElementsByTagName('button');
+    // for (var i=0;i<btns.length;i++){
+    //     (function(i){
+    //         btns[i].addEventListener('click',function(){
+    //       console.log("第" + i + "个按钮被打印");
+    //   })
+    //     })(i)
+    // }
+    //解决方法二 将var改成let 让i变为块级作用域变量
+    var btns=document.getElementsByTagName('button');
+    for (let i=0;i<btns.length;i++){
+      btns[i].addEventListener('click',function(){
+          console.log("第" + i + "个按钮被打印");
+      })
+    }
+</script>
+</body>
+</html>

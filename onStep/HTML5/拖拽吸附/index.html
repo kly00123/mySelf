@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./style.css">
+<body>
+    <div style="display: flex; flex-direction: row;">
+    <div class="div1" id="div1">
+        <p class="pe" id="pe" draggable="true">试着把我拖走1</p>
+        <p class="pe" id="pe2" draggable="true">试着把我拖走2</p>
+    </div>
+    <div class="div2" id="div2"></div>
+</div>
+<script>
+    /*1.注意在哪个元素上拖拽就在哪个元素上添加draggable
+      2.
+    */
+    document.ondragstart=function(e){
+          console.log(e);
+          e.target.parentNode.style.borderWidth="5px";
+          e.target.style.opacity=0.5; //修改拖拽时的样式
+      obj=e.target;
+      //只能传到ondrop里面
+      e.dataTransfer.setData("text/html",e.target.id)
+    }
+    document.ondragend=function(e){
+        e.target.style.opacity=1;  //恢复拖拽前的样式
+        div1.style.borderWidth="1px";
+    }
+    document.ondragover=function(e){
+        e.preventDefault(); //浏览器默认不允许吸附事件，添加阻止默认事件
+    }
+    document.ondrop=function(e){
+        let id=e.dataTransfer.getData("text/html")
+      e.target.appendChild(document.getElementById(id))
+    }
+    
+</script>
+</body>
+
+</html>

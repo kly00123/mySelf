@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    .demo{
+        margin:400px auto;
+        width: 200px;
+        height:200px;
+        position: relative;
+        
+    }
+    .demo>img{
+        position: absolute;
+        width:100%;
+        height:100%;
+        opacity: 0.1;
+        transition: transform 2s;
+        transform-origin: right top; /*根据右上角进行旋转*/
+    }
+    .demo:hover>img:nth-of-type(1){
+        transform: rotate(60deg);
+
+    }
+    .demo:hover>img:nth-of-type(2){
+        transform: rotate(120deg);
+
+    }
+    .demo:hover>img:nth-of-type(3){
+        transform: rotate(180deg);
+
+    }
+    .demo:hover>img:nth-of-type(4){
+        transform: rotate(240deg);
+
+    }
+    .demo:hover>img:nth-of-type(5){
+        transform: rotate(300deg);
+    }
+    .demo:hover>img:nth-of-type(6){
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+   
+</style>
+<body>
+    <div class="demo">
+        <img src="./222.jpg" alt="">
+        <img src="./111.jpg" alt="">
+        <img src="./444.png" alt="">
+        <img src="./555.png" alt="">
+        <img src="./666.png" alt="">
+        <img src="./777.jpg" alt="">
+    </div>
+</body>
+</html>

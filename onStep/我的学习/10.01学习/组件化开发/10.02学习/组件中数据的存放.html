@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基本模板</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <my-cpn></my-cpn>
+    </div>
+    <template id='cpn'>
+        <div>         
+            <cpn1></cpn1>
+            <h2>{{title}}</h2>
+            <p>我是内容11111111</p>
+            <p>我是内容22222222</p>
+        </div>
+    </template>
+    <script src="../../../../js/vue.js"></script>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            }
+            else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            }
+            else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = null;
+            }
+        },
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+        preventDefault: function (event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false;
+            }
+        }
+    }
+
+</script>
+<script>
+    Vue.component('my-cpn', {
+        template:'#cpn',
+        components: {
+            'cpn1':
+            {
+        template:`
+        <div>
+            <h2>我是标题2</h2>
+            <p>我是内容啊啊啊啊啊</p>
+            <p>我是内容哦哦哦哦哦</p>
+            </div>
+        `  
+    },
+        },
+        data(){
+        return{
+            title:"我是标题!!!!!!!!!!!!!!!!" //注意这里的data是一个函数，因为每次调用函数都会返回一个新的对象，防止重复调用组件时公共一个参数，不会相互影响，都有一个对象来保存属于自己的状态
+        }
+    },
+    })
+    const app=new Vue({
+        el:"#app",
+        data:{
+            message:"123"
+        },
+        methods:{
+
+            }
+    })
+</script>
+</body>
+</html>

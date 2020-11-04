@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基本模板</title>
+</head>
+<body>
+    <div id="app" @click="divclick">
+       <button @click.stop="btnclick">按钮</button> //阻止divclick事件冒泡
+    </div>
+    <form action="baidu">
+        <input type="submit" value="提交" @click.prevent="submitclick">
+    </form>
+    <div tabIndex=0>
+    <input type="text" @keyup="keyup">
+</div>
+<script src="../../js/vue.js"></script>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            }
+            else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            }
+            else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = null;
+            }
+        },
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+        preventDefault: function (event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false;
+            }
+        }
+    }
+
+</script>
+<script>
+    const app=new Vue({
+        el:"#app",
+        data:{
+            message:"123"
+        },
+        methods:{
+            btnclick(){
+                console.log('btnclick');
+            },
+            divclick(){
+                console.log('divclick');
+            },
+            submitclick(){
+                console.log('submitclick');//prevent阻止默认事件，阻止点击后直接提交，可以在函数里做一系列操作后再提交
+            },
+            keyup(){
+                console.log('keyup');
+            }
+            }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基本模板</title>
+</head>
+<body>
+    <div id="app" @this-item-click="getitem">
+        <h2>{{message}}</h2>
+        <cpn @this-item-click="getitem"></cpn> <!--这里通过v-on监听事件接受子组件发射过来的自定义事件-->
+    </div>
+    <script src="../../../../js/vue.js"></script>
+    <template id="cpn1">
+        <div>
+            <div>这是标题</div>
+        <button v-for="item in categories" @click="itemclick(item)">{{item.name}}</button>
+        </div>
+    </template>
+<script>
+    Vue.component('cpn', {
+        template:"#cpn1",
+        data(){
+            return{
+                categories:[
+                {id:'1',name:"海贼王"},
+                {id:'2',name:"火影忍者"},
+                {id:'3',name:'银魂'}
+            ]
+            }
+        },
+        methods:{
+            itemclick(item){
+              this.$emit('this-item-click',item) //这里注册自定义事件向父组件发射
+            }
+        }
+    })
+    const app=new Vue({
+        el:"#app",
+        data:{
+            message:"123"
+        },
+        components: {
+            cpn1
+        },
+        methods:{
+            getitem(item){
+                console.log('这是父组件',item) //这里是接受到子组件发射过来组件的数据
+            }
+        }
+        
+    })
+</script>
+</body>
+</html>

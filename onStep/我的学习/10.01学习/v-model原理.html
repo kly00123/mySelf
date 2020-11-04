@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基本模板</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <input type="text" v-model="message">
+
+        <h2>{{message}}</h2>
+        <input type="text" :value="message" @input="valueChange">
+    </div>
+    <script src="../../js/vue.js"></script>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            }
+            else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            }
+            else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = null;
+            }
+        },
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+        preventDefault: function (event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false;
+            }
+        }
+    }
+
+</script>
+<script>
+    const app=new Vue({
+        el:"#app",
+        data:{
+            message:"1233"
+        },
+        methods:{
+            valueChange(){
+                this.message=event.target.value  //通过监听input事件获取输入信息，根据v-bind动态绑定data里的message的值 v-bind:value可以写为:value v-on:input可以写为@input 简写名叫语法糖
+            }
+            }
+    })
+</script>
+</body>
+</html>

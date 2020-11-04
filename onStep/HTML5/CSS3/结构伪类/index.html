@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    ul{
+        width: 700px;
+        height:500px;
+        margin:0 auto;
+        margin-top:100px;
+        list-style: none;
+        border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+    }
+    ul >li{
+        float : left;
+        width: 100px;
+        height:100px;
+        box-sizing: border-box;
+        line-height: 100px;
+        text-align: center;
+        background-color: #fff;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+    /*相对于父元素的伪类结构*/
+    li:first-child{      /*如果ul里包含其他的标签则失效*/
+        color:red
+    }
+    li:first-of-type{ /*只在ul下面的li标签生效，有无其他标签不影响*/
+        color:red
+    }
+    li:last-child{
+        color:red
+    }
+    li:last-of-type{
+        background-color:aqua;
+    }
+    li:nth-child(4){/*指定元素位置的元素发生变化 索引是从1开始*/
+        color:red
+    }
+    li:nth-child(even){/*even为偶数 odd为奇数*/
+        color:aqua
+    }
+    li:nth-child(odd){
+        color:blueviolet
+    }
+    li:nth-of-type(even){ 
+        color:red
+    }
+    li:nth-of-type(-n+5){  /*为n的时候是所有的元素改变 若要改变从头开始数几个元素。则-n+几*/
+        font-size: 19px;
+    }
+</style>
+<body>
+    <ul>
+        <p>试试</p>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <div></div>
+    </ul>
+</body>
+</html>

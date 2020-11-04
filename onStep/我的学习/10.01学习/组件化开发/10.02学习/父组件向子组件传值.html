@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基本模板</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <!--这里必须在vue实例里面通过v-bind绑定才能找到父组件里面的值，相当于这里是<div>里面定义的一些属性 而模板里的内容是具体的值-->
+        <my-cpn :cmovies="movies" :c-message="message"></my-cpn>  <!--v-bind不支持驼峰命名 可以写为c-movies或者cmovies 但是下面的内容可以用驼峰命名 c-message=cMmesaage -->
+    </div>
+    <template id='cpn'>
+        <div>         
+            <cpn1></cpn1>
+            <h2>{{title}}</h2>
+            <h2>{{cMessage}}</h2>
+            <ul>
+                <li v-for="item in cmovies">{{item}}</li><!--上面通过v-bind获取到了父组件中movies的值 这里拿来用-->
+            </ul>
+            <p>我是内容11111111</p>
+            <p>我是内容22222222</p>
+        </div>
+    </template>
+    <script src="../../../../js/vue.js"></script>
+<script>
+    Vue.component('my-cpn', {
+        template:'#cpn',
+        props:{
+            cmovies:{ //先定义由父组件传过来的值的名字
+        type(){
+            return []   //type通过函数规定返回的数据是什么类型 是对象或者数组的话必须以函数的形式返回对象
+        },
+        default:['aaaaaaa'], //default表示没有传入值默认显示内容
+        required:true  //required表示是否为必传字段
+        },
+        cMessage:{
+            type:String,
+            default:'这个是默认字段',
+        }
+        },
+        components: {
+            'cpn1':
+            {
+        template:`
+        <div>
+            <h2>我是标题2</h2>
+            <p>我是内容啊啊啊啊啊</p>
+            <p>我是内容哦哦哦哦哦</p>
+            </div>
+        `  
+    },
+        },
+        data(){
+        return{
+            title:"我是标题!!!!!!!!!!!!!!!!" //注意这里的data是一个函数，因为每次调用函数都会返回一个新的对象，防止重复调用组件时公共一个参数，不会相互影响，都有一个对象来保存属于自己的状态
+        }
+    },
+    })
+    const app=new Vue({
+        el:"#app",
+        data:{
+            message:"123",
+            movies:['海贼王','死神','火影忍者']
+        },
+        methods:{
+
+            }
+    })
+    ///
+    ///
+    // 创建组件components->'组件名称':{template:"#xxx",(上文<template>标签里写好绑定过来)
+    //                                 props:{
+    //                                   type:string,(type也可以是自定义的，比如定义一个num1:Number,那么在父组件中的<标签名>中通过v-bind绑定就行)
+    //                                   default:'xxxx',
+    //                                   required:true  
+    //                                 },
+    //                                 data(){
+    //                                     return xxx或者{
+
+    //                                     }
+    //                                 },
+
+    //                                 }
+</script>
+</body>
+</html>

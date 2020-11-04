@@ -1,0 +1,21 @@
+<script>
+    //第一种老方法循环
+    totalPrice=0;
+    for (let i=0;i<this.books.length;i++){
+   totalPrice += this.books[i].price*this.books[i].count;
+    }
+    return totalPrice;
+    //第二种
+    totalPrice=0;
+    for (let i in this.books){
+        totalPrice += this.books[i].price*this.books[i].count;
+    }
+    return totalPrice;
+    //第三种
+    totalPrice=0;
+    for (let i of this.books){
+        totalPrice += i.price*i.count
+    }
+
+    return totalPrice;
+</script>

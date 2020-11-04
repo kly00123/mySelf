@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /*box-sizing
+     box-sizing: border-box;   box-sizing: content-box;
+    将此DIV变成盒模型，如果不加这个那么DIV的总长度为content+border+padding+width
+    如果加这个那么DIV的总长度为content+border+padding=width
+    再不改变DIV大小的情况下再内部对内容的位置等进行修改，方便页面的稳固
+    */
+    */
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .nav{
+        display: flex;
+        flex-direction: column;
+        margin:20px auto;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box; 
+    }
+    .item1{
+         width: 100px;
+         height:100px;
+         background-color: turquoise;
+         bottom: 10px;
+    }
+    .item2{
+         width: 100px;
+         height:100px;
+         background-color: turquoise;
+    }
+    .item3{
+         width: 100px;
+         height:100px;
+         background-color: turquoise;
+    }
+    .item1:hover{
+        border: 1px solid red;
+    }
+    .item2:hover{
+        border: 1px solid red;
+    }
+</style>
+<body>
+    <div>
+        <div class="nav item1">我是内容1</div>
+        <div class="nav item2">我是内容2</div>
+        <div class="nav item3">我是内容3</div>
+    </div>
+</body>
+</html>

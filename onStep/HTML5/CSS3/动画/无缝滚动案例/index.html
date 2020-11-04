@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    div{
+        overflow: hidden;
+        margin:50px auto;
+        width: 1200px;
+        height:200px;    
+    }
+    div>ul{
+        list-style: none;
+        width: 300%; /*无缝循环的重点在这里*/
+        animation-name: moveTest;/*指定动画名称*/
+        animation-duration: 6s;/*设置时间  必须设置时间 不然不知道多久运行完*/
+        animation-iteration-count:infinite; /*设置次数 infinite无限次重复 */
+        animation-timing-function: linear;
+    }
+    div>ul>li{
+        width: 200px;
+        height: 200px;
+        float: left;
+    }
+    div>ul>li>img{
+        width: 100%;
+        height: 200px;
+    }
+    div>ul:hover{
+        animation-play-state: paused;
+    }
+    @keyframes moveTest {
+        from{
+            transform:translateX(0);
+        }
+        to{
+            transform:translateX(-1200px);
+        }
+    }
+</style>
+<body>
+    <div class="demo">
+        <ul>
+            <li> <img src="./222.jpg" alt=""></li>
+            <li><img src="./111.jpg" alt=""></li>
+            <li><img src="./444.png" alt=""></li>
+            <li><img src="./555.png" alt=""></li>
+            <li><img src="./666.png" alt=""></li>
+            <li><img src="./777.jpg" alt=""></li>
+            <li> <img src="./222.jpg" alt=""></li>
+            <li><img src="./111.jpg" alt=""></li>
+            <li><img src="./444.png" alt=""></li>
+            <li><img src="./555.png" alt=""></li>
+            <li><img src="./666.png" alt=""></li>
+            <li><img src="./777.jpg" alt=""></li>
+            <li><img src="./555.png" alt=""></li>
+            <li><img src="./666.png" alt=""></li>
+            <li><img src="./777.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .demo{
+        margin:50px auto;
+        width: 600px;
+        height:800px;
+    }
+    .demo>img{
+        width: 200px;
+        height:250px;
+        transition:transform 2s;
+    }
+    .demo>img:nth-of-type(1){
+        transform:translate(100px,100px) rotate(30deg) /*先移动，再旋转，如果先旋转再移动的话，中心点会一直改变，导致出问题*/
+    }
+    .demo>img:nth-of-type(2){
+        transform:translate(300px,300px) rotate(230deg)
+    }
+    .demo>img:nth-of-type(3){
+        transform:translate(-100px,-100px) rotate(-30deg)
+    }
+    .demo>img:nth-of-type(4){
+        transform:translate(-200px,100px) rotate(60deg)
+    }
+    .demo>img:nth-of-type(5){
+        transform:translate(150px,150px) rotate(300deg)
+    }
+    .demo>img:nth-of-type(6){
+        transform:translate(-150px,100px) rotate(-30deg)
+    }
+    .demo:hover>img{
+        transform:none;  /*取消transform样式，也就是回到最初没有旋转的地方*/
+    }
+</style>
+<body>
+    <div class="demo">
+        <img src="./222.jpg" alt="">
+        <img src="./111.jpg" alt="">
+        <img src="./444.png" alt="">
+        <img src="./555.png" alt="">
+        <img src="./666.png" alt="">
+        <img src="./777.jpg" alt="">
+    </div>
+</body>
+</html>

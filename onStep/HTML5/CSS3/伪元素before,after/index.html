@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 600px;
+        height:300px;
+    }
+    body{
+        padding: 200px;
+    }
+    div:nth-of-type(1){
+        width: 450px;
+        height:300px;
+        background-color: blueviolet;
+        float: left;
+    }
+    div:nth-of-type(2){
+        position: relative;
+        width: 150px;
+        height:300px;
+        background-color:burlywood;
+        float: left;
+    }
+    div:nth-of-type(2)::before{
+        content: ''; /*必须加content 不然后期无法显示*/
+        /*默认是行级元素，如果想设置宽高要变为块级元素*/
+        position: absolute;
+        width: 50px;
+        height:50px;
+        top:-25px;
+        left:-25px;
+        border-radius: 50px;
+        background-color:cornsilk;
+    }
+
+    div:nth-of-type(2)::after{
+        content: ''; /*必须加content 不然后期无法显示*/
+        /*默认是行级元素，如果想设置宽高要变为块级元素*/
+        /*
+        1.行内→块级，display:block;块级→行内,display：inline;
+        2.给背景色加宽高
+        3.添加float
+        4. position  不过3.4会影响兄弟元素
+        */
+        position: absolute;
+        width: 50px;
+        height:50px;
+        bottom:-25px;
+        left:-25px;
+        border-radius: 50px;
+        background-color:cornsilk;
+    }
+</style>
+<body>
+    <div></div>
+    <div></div>
+</body>
+</html>

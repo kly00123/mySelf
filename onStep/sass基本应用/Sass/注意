@@ -1,0 +1,2 @@
+1.导入到HTML中的css文件应该用link导入
+2.实时更新的话用 sass --watch scss:dist/css   第一个文件为导出文件夹 第二个为导入文件夹

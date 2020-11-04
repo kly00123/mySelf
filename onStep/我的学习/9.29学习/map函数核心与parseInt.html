@@ -1,0 +1,24 @@
+<script>
+    const arr=["你",'我','他'];
+    arr.map(function(item,index,array){
+    console.log(item,index,array);
+    })//与下面相等
+    arr.map(console.log); //map函数接受三个参数，分别为输出元素本身，序号和数组本身。并且只要传入一个函数就会为函数附上对应的参数。只要数组没问题，无论如何map里面的函数都是传入三个参数对应的值，即使不定义也是默认存在的
+ </script>
+
+ <script>
+     //parseInt()是接受一个字符串，然后返回一个整数结果。可接受两个参数，第一个参数是接受的值 第二个值为多少进制,0为十进制，如果值小于2或者大于36，返回NAN
+     const num0=parseInt("110",0);//110
+     const num0=parseInt("110",1);//NAN
+     const num0=parseInt("110",2);//6
+ </script>
+
+ <script>
+     console.log(['1','2','3'].map(parseInt)); //[1,NAN,NAN]
+     ['1','2','3'].map(function(item,index,array){
+          return parseInt(item,index,array);//但是由于parseInt最多接受两个参数，所以如下
+     })
+     parseInt("1",0);//1
+     parseInt("1",1);//NAN
+     parseInt("1",2);//NAN
+ </script>

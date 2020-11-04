@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .demo {
+        width: 200px;
+        height: 200px;
+        font-size: 40px;
+        margin: 20px auto;
+        text-align: center;
+        color:#fff;
+        background-color: darkgray;
+    }
+
+    .demo1 {
+        /*text-shadow:X-offset Y-offset Blur Color 左上角为原点 Blur为模糊程度，不能为负值，越大越模糊*/
+        text-shadow: -2px -2px 5px red;
+    }
+    .demo2{
+        text-shadow: 0 0 5px #fff;
+    }
+    .demo3{/*多层阴影效果*/
+        text-shadow: 0 0 30px #fff,0 0 50px red,0 0 70px #fff
+    }
+    .demo4{/*雕刻效果*/
+        text-shadow: -1px -1px 0px #eee,-2px -2px 0px #ddd,-3px -3px 0px #ccc
+    }
+    .demo5{/*变模糊*/
+        color:transparent; /*不可调节透明度，始终保持透明*/
+text-shadow: 0px 0px 8px hsla(30,100%,50%,1);
+    }
+</style>
+
+<body>
+    <div>
+        <div class="demo demo1">中华人民共和国</div>
+        <div class="demo demo2">中华人民共和国</div>
+        <div class="demo demo3">中华人民共和国</div>
+        <div class="demo demo4">中华人民共和国</div>
+        <div class="demo demo5">中华人民共和国</div>
+    </div>
+</body>
+
+</html>

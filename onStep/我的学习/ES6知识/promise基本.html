@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>基本模板</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+    </div>
+    <script src="../../js/vue.js"></script>
+    <script>
+        new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('这是第一层成功信息')  //成功是调用resolve,进入then，逻辑代码全写到then里面， 也可以省略reject，用then接受两个参数then(data((data=>{})),err((err=>{})))
+                reject('这是第一层失败信息')  //失败时调用reject,进入catch
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve('这是第二层成功信息')
+                        reject('这是第二层失败信息')
+                    }, 2000)
+                }).then((data) => { //这里用data接受了resolve里面的参数
+                    console.log(data);
+                }).catch((err) => {
+                    console.log(err);
+                })
+            }, 1000);
+        }).then(data => {
+            console.log(data);
+        }).catch(err => {
+            console.log(err);
+        })
+    </script>
+    <script>
+       new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("aaa")
+            },1000)
+        }).then(res=>{     //这里是对Promise的简写 拿到结果传到下一个promise里直接调用
+            console.log(res);
+            return res + '111'
+        }).then(ress=>{
+            console.log(ress);
+ const a =ress + "222"   
+ console.log(a)
+        })
+    </script>
+    <script>
+        //这里是对Promise对象的迭代 同时满足两个resolve才会执行then
+        Promise.all([
+            new Promise((resolve, reject) => {
+                resolve('我是第一！！！')
+                // reject('11111')
+            }),
+            new Promise((resolve, reject) => {
+                resolve({ name: 'kly', age: 18 })
+            })
+        ]).then((results) => {
+            console.log(results);
+        })
+    </script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: "123"
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

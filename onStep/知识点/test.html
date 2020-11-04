@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>你好</title>
+</head>
+<body>
+	<div>
+		<div id="video">
+			<video id="player" poster="img/60x60.png" defaultPlaybackRate="2" src="video/1.mp4" width="300" height="300">This is Video</video>
+		</div>
+			<div class="controls">
+				<input type="button" value="Play" id="video-btn">
+				<span id="curtime">0</span>/<span id="duration">1</span>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<button id="my-btn">点我</button>
+	<div id="message" style="left:10px">我是内容</div>
+	<script>
+const arr=["你",'我','他'];
+arr.map(function(item,index,array){
+console.log(item,index,array);
+})//与下面相等
+arr.map(console.log); //map函数接受三个参数，分别为输出元素本身，序号和数组本身。并且只要传入一个函数就会为函数附上对应的参数。只要数组没问题，无论如何map里面的函数都是传入三个参数对应的值,
+	</script>
+	<script type="text/javascript">
+		var EventUtil = {
+			addHandler: function (element, type, handler) {
+				if (element.addEventListener) {
+					element.addEventListener(type, handler, false);
+				}
+				else if (element.attachEvent) {
+					element.attachEvent("on" + type, handler)
+				}
+				else {
+					element["on" + type] = handler;
+				}
+			},
+			removeHandler: function (element, type, handler) {
+				if (element.removeEventListener) {
+					element.removeEventListener(type, handler, false);
+				}
+				else if (element.detachEvent) {
+					element.detachEvent("on" + type, handler)
+				}
+				else {
+					element["on" + type] = null;
+				}
+			},
+			getEvent: function (event) {
+				return event ? event : window.event;
+			},
+			getTarget: function (event) {
+				return event.target || event.srcElement;
+			},
+			preventDefault: function (event) {
+				if (event.preventDefault) {
+					event.preventDefault();
+				}
+				else {
+					event.returnValue = false;
+				}
+			}
+		}
+
+	</script>
+		<script>
+			function chunk(array,process,context){
+				setTimeout(function(){
+					var item=array.shift();
+					process.call(context,item);
+					if (array.length>0){
+						setTimeout(arguments.callee,100);
+					}
+				},100)
+			}
+				   //var data=[12,13,14,15,11,111,1111,10,22,23,34,56,67,96,435,1234,456,756,324];
+	   function printValue(item){
+		   var div=document.getElementById("message");
+		   div.innerHTML+=item+"<br>";
+	   }
+	   chunk(data,printValue);
+			var name="小王",age=17;
+			var obj={
+				name:'嚣张',
+				objAge:this.age,
+				myFun(event){
+					var age="20";
+					console.log(event);
+				}
+			}
+			var ob={
+				name:'张三',
+				age:"111"
+			}
+				setTimeout(function(){
+					var div=document.getElementById("message");
+					left=parseInt(div.style.left)+5;
+					console.log(left);
+					div.style.left=left+"px";
+					if (left<200){
+						setTimeout(arguments.callee,50);
+					}
+				},50);
+			EventUtil.addHandler(btn,"click",function(event){
+				console.log(event);
+			})
+			obj.myFun(event);
+			//obj.myFun.bind(ob,"尼玛","你爸",'good','change')();
+					</script>
+		<script>
+			var player=$('player'),
+			 btn=$('video-btn'),
+			 curtime=$('curtime'),
+			 duration=$('duration');
+			 duration.innerHTML=player.duration;
+			 console.log(duration);
+  EventUtil.addHandler(btn,"click",function(event){
+	  if (player.paused){
+		  player.play();
+		  btn.value="Pause";
+	  }
+	  else{
+		  player.pause();
+		  btn.value="Play";
+	  }
+  });
+  setInterval(function(){
+	  curtime.innerHTML=player.currentTime;
+  },100);
+
+
+	   </script>    
+	<script>
+		//var form=document.getElementById("myForm");
+		var sele = document.getElementById("sele");
+		sele.contentEditable = "true";
+		// console.log(colorFields);
+		EventUtil.addHandler(document, "click", function (event) {
+			event = EventUtil.getEvent(event);
+			console.log(event.target.innerHTML)
+			var target = EventUtil.getTarget(event);
+			console.log(event.target.length);
+			//console.log(target.value);
+			// var newOption=new Option("text","value");
+			// sele.add(newOption,undefined);
+			var seletOp = selet.options[1];
+			sele.insertBefore(seletOp, sele.options[seletOp.index - 1]);
+			target.style.color = "red";
+		})
+	</script>
+
+</body>
+
+</html>

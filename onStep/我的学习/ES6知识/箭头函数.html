@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基本模板</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+    </div>
+    <script src="../../js/vue.js"></script>
+    <script>
+        //1.定义函数的方式
+        //const a = function(){
+//
+        //}
+//       2.对象字面量中定义函数
+//const a ={
+//     a :function{                
+
+//     }
+// }
+// 或者
+//   a(){
+
+//   }
+// 3 箭头函数（ES6）  一般时把一个函数作为参数传给另一个函数的时候使用 比如settimeout(function(){},1000)     settimeout(()=>{}，1000)
+// const a = (参数列表)=>{
+
+// }
+//  箭头函数里的this指向是向外层作用域中，一层层的寻找this,直到有this的定义
+const a = () => {
+
+}
+
+1.
+有两个或者两个以上的参数
+  const sum = (sum1,sum2) => {
+      return sum1 + sum2 
+  }
+2.
+如果只有一个参数时,小括号可以省略
+  const power = num => {
+      return num * num
+  }
+3.
+如果大括号后面只有一行代码,大括号可以省略
+const mul = (sum1,sum2) => sum1 * sum2
+    </script>
+<script>
+    const app=new Vue({
+        el:"#app",
+        data:{
+            message:"123"
+        },
+        methods:{
+
+            }
+    })
+</script>
+</body>
+</html>

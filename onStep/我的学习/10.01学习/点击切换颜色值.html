@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基本模板</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in movies" :class="{active:currentItem===index}" @click="getIt(index)">{{index}}.{{item}}</li>
+        </ul>
+    </div>
+    <script src="../../js/vue.js"></script>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            }
+            else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            }
+            else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = null;
+            }
+        },
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+        preventDefault: function (event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false;
+            }
+        }
+    }
+
+</script>
+<script>
+    const app=new Vue({
+        el:"#app",
+        data:{
+            message:"123",
+            movies:[
+                '海泽王','火影忍者','死神','银魂'
+            ],
+            currentItem:0
+        },
+        methods:{
+            getIt(index){
+                this.currentItem=index;
+            }
+            }
+    })
+</script>
+<style>
+    .active{
+        color:red;
+    }
+</style>
+</body>
+</html>

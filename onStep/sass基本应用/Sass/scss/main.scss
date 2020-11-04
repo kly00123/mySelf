@@ -1,0 +1,73 @@
+$main-color:#548ebd;
+$second-color:#0b3d66;
+$tree-color:#c93535;
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;//垂直居中
+    justify-content: center; //水平居中
+    position: relative;
+    min-height: 100vh; //设置图片大小
+    background:url(../img/222.png) center center/cover no-repeat; //注意这里是从main.css出发 而不是main.scss出发 路径注意
+   &::after{  //设置蒙层
+       content: '';
+       position: absolute;
+       top:0;
+       left:0;
+       width:100%;
+       height:100%;
+       background-color: $main-color;
+       opacity: 0.4; //透明度
+       z-index: -1;  //为了不让蒙层覆盖表单内容
+   }
+}
+.card{
+    width: 400px;
+    padding:2rem 3rem;  //设置上下 左右padding 将元素上下排列好
+    background-color: #ededed;
+    h1{
+        margin-bottom: 1rem;
+        color:#548ebd;
+        font-weight: 400; //减少字的粗细
+    }
+    form input{
+        display: block; //每个元素独占一行
+        margin-bottom: 1rem;
+        width: 100%;  
+        padding:0.5rem;
+        border:1px solid $main-color;
+        &:last-child{  //最后一个元素为button
+           background: $main-color;
+           color:#ededed;
+           transition: all 0.5s; //过渡效果
+           &:hover{ //鼠标移动到该元素后发生变化
+          background: $second-color;
+           }  
+        }
+        &:focus{ //聚焦 点到那个框触发效果
+            outline:1px solid $second-color;
+        }
+    }
+    ul{
+        list-style: none; //去掉ul前面的点
+        display: flex;
+        justify-content: space-between; //分散两侧 空格中间
+        font-size: 0.9rem;
+        li a{
+            color:$second-color;
+            border-bottom: 1px solid transparent;//为了显示下面hover有下划线 这里鼠标没移动到这里的时候不显示下划线
+            text-decoration: none; //去掉a标签下面的下划线
+            transition: all 0.5s;
+
+            &:hover{
+                color:$tree-color;
+                border-bottom: 1px solid $tree-color; //鼠标移动到这里时显示下划线
+            }
+        }
+    }
+}

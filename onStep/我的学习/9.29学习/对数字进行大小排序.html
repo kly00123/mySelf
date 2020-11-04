@@ -1,0 +1,8 @@
+<script>
+    arr=[3,6,110,28,99];
+    arr.sort(function(x,y){  //当function(x,y)得到的返回值小于0，X会被移动到y前面。当function(x,y)得到的返回值大于0，X会被移动到y后面。当function(x,y)得到的返回值等于0，x和y的位置相对不变
+        return x -y; // [3,6,28,99,110]
+        //retun y - x 是从大到小排序
+    })
+    console.log(arr);
+       </script>

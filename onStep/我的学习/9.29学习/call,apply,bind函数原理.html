@@ -1,0 +1,86 @@
+<script>
+    //这里是call原理
+    function person(a,b,c,d){
+        return {
+            name:this.name,
+            a:a,b:b,c:c,d:d
+        }
+    }
+    var egg={name:"小白"};
+    Function.prototype.newApply=function(obj){
+        var obj=obj||window;
+        obj.p=this;
+        //console.log(this);
+        //console.log(arguments);
+        var newCall=[];
+        for (var i=1;i<arguments.length;i++){
+            newCall.push('arguments['+ i +']');
+        }
+        //console.log(newCall);
+        var result=eval('obj.p(' + newCall + ')');
+        delete obj.p; 
+        return result;
+    };
+    var bi=person.newApply(egg,['点赞','收藏','转发','获取']);
+    console.log(bi);
+</script>
+
+
+<script>
+    //这里是apply原理
+    function person(a,b,c,d){
+        return {
+            name:this.name,
+            a:a,b:b,c:c,d:d
+        }
+    }
+    var egg={name:"小白"};
+    Function.prototype.newApply=function(obj,arr){ //apply只有两个参数
+        var obj=obj||window;
+        obj.p=this;
+        if (!arr){
+            obj.p();
+        }
+        else{
+            var newCall=[];
+        for (var i=0;i<arr.length;i++){ //注意这里是从0开始
+            newCall.push('arr['+ i +']');
+        }
+        //console.log(newCall);
+        var result=eval('obj.p(' + newCall + ')');
+        delete obj.p; 
+        return result;
+        }
+    };
+    var bi=person.newApply(egg,['点赞','收藏','转发','获取']);
+    console.log(bi);
+</script>
+
+<script>
+    //这里是bind
+    function person(a,b,c){
+			console.log(this.name);
+			console.log(a);
+			console.log(b);
+			console.log(c);
+    }
+    var egg={name:"小白"};
+    Function.prototype.newBind=function(obj){ // bind是具有柯里化特性的
+        var obj=obj||window;
+      var that=this;
+	//  console.log(arguments);
+		arr=Array.prototype.slice.call(arguments,1);
+	//	console.log(arr);
+		return function(){
+		 var arr2=Array.prototype.slice.call(arguments);//对象转化为数组，可以使用slice方法，不传入后面从第几位开始切割数字即可
+		var totalArr=arr.concat(arr2);
+		that.apply(obj,totalArr); //控制参数还是选用apply好
+		return totalArr;
+		}
+    };
+  person.bind(egg,'点赞','收藏')('充电');
+    //console.log(bi);
+    </script>
+    
+    使用new会让this失效，不用new this依旧有效（this指代call函数等第一个参数）
+    new绑定的规则：使用new来构造函数，也就是发生了构造函数，那么实例（新对象）会绑定到函数调用的this

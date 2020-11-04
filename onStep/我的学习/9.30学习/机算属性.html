@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>机算属性</title>
+</head>
+<body>
+    <div id="app">
+        <!--通过methods方法-->
+        <h2>{{getFullName()}}</h2>
+           <!--通过computed机算属性方法-->
+        <h2>{{fullName}}</h2>
+        <h2>{{totalPrice}}</h2>
+    </div>
+<script>
+    const num=[10,20,30,50,110,220];
+    let total=num.filter(n=>n<100).map(n=>n*2).reduce((preValue,n)=>preValue+n);
+console.log(total);
+</script>
+<script src="../../js/vue.js"></script>
+<script>
+    const app=new Vue({
+        el:"#app",
+        data:{
+            firstName:"kun",
+            lastName:"luyu",
+            books:[
+                {
+                   id:110,name:"x",price:100
+            },
+            {
+                   id:111,name:"x",price:110
+            },
+            {
+                   id:112,name:"X",price:120
+            }
+        ]
+        },
+        computed:{
+            fullName(){ //注意机算属性相当于是添加了一个属性，所以起名字不用使用get等前缀
+                return this.firstName + ' ' + this.lastName;
+            },
+            //机算属性完整的写法应该是fullName是个属性，对应里面是个对象，通过get来获取数据，对应的set一般没有，属于只读属性
+            // fullName:{ 
+                // set(newValue){
+                //    const names=newValue.split(' ');//比如传入一个科比 布莱恩特，空格进行分割
+                //    this.firstName = names[0];//替代上面的firstName
+                //    thsi.lastName = names[1];
+                // },
+            //     get(){      
+            //     return this.firstName + ' ' + this.lastName;
+            //     }
+            // },
+            totalPrice(){            
+                let result=0;
+                for(let i=0;i<this.books.length;i++){
+                  result+= this.books[i].price;
+                }
+                return result; //注意这里结果应该是属性的名字，而不是return后面的变量
+            }
+        },
+        methods:{
+                getFullName() {  //这里函数返回值 所以上面调用要加()
+                    return this.firstName + ' ' + this.lastName;
+                }
+            }
+    })
+</script>
+</body>
+<!--computed方法只会调用一次（因为VUE里的机算属性是有缓存的，会观察数据是否发生了变化，如果没有发生变化，就会直接返回以前的结果，而不是methods一样每次都重新机算），而methods里的方法会重复调用，computed性能更高-->
+</html>

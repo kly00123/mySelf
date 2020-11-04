@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基本模板</title>
+</head>
+<body>
+    <div id="app">
+    <div v-if="isUser">
+        <!--  如果不加key，那么由于vue内置的机制，不是创建一个DIV就直接渲染到页面上，而是会有一个VUE创建的虚拟DOM，内部的复用问题，如果有相似的元素就会直接用之前的元素，对比前后的内容进行替换-->
+     <span>账号登录</span><input type="text" placeholder="账号登录" key="text">
+    </div>
+    <div v-else>
+        <span>邮箱登录</span><input type="text" placeholder="邮箱登录" key="email">
+       </div>
+       <button @click="isUser=!isUser">登录</button>
+    <script src="../../js/vue.js"></script>
+</div>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            }
+            else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            }
+            else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = null;
+            }
+        },
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+        preventDefault: function (event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false;
+            }
+        }
+    }
+
+</script>
+<script>
+    const app=new Vue({
+        el:"#app",
+        data:{
+            message:"123",
+            isUser:true
+        },
+        methods:{
+ 
+            }
+    })
+</script>
+</body>
+</html>

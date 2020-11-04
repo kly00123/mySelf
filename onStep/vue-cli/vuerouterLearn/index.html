@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>vuerrouterlearn</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script>
+    export default{
+      name:'App',
+      data () {
+        return {
+        message:'kly'  
+        }
+      },
+      created () {
+        document.title= '首页'
+         //组件被创建后就会回调这个函数
+      },
+      mounted () {
+        //当我们这些template这些或者说组件被挂载到DOM上面后进行回调
+      },
+      updated () {
+        //界面发生更新或者说刷新的时候进行回调 比如说绑定一个data里的message在DOM上 如果data里的mesaage发生改变，界面上更新完后就会回调这个updated
+      }
+    }
+  </script>
+</html>

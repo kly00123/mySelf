@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .demo1{
+        margin:20px auto;
+        width: 200px;
+        height: 200px;
+        background: url(./222.jpg);
+        background-repeat: round; /*对图片进行缩放后平铺*/
+    }
+    .demo2{
+        margin:20px auto;
+        width: 600px;
+        height: 600px;
+        background: url(./111.jpg);
+        background-repeat: space; /*图片不会缩放，只对图片产生相同的间距*/
+    }
+    .demo3{
+        margin:20px auto;
+        width: 600px;
+        height: 600px;
+        background: url(./222.jpg);
+        background-repeat: round;
+        background-attachment: fixed;/*背景图片的位置固定不变*/
+    }
+    .demo4{
+        margin:20px auto;
+        width: 400px;
+        border: 1px solid red;
+        height: 400px;
+        background-image: url(./111.jpg);
+        background-repeat: round;
+        overflow: scroll;
+        background-attachment: scroll;/*背景图片的位置固定不变*/
+    }
+    .demo5{
+        margin:20px auto;
+        width: 400px;
+        border: 1px solid red;
+        height: 400px;
+        background-image: url(./111.jpg);
+        background-repeat: round;
+        overflow: scroll;
+        background-attachment: local;/*背景图片跟着一起滚动*/
+    }
+    .demo6{
+        width: 200px;
+        height: 200px;
+        background: url(./222.jpg);
+        background-size: 200px 200px;/*设置图片的大小*/
+    }
+    .demo7{
+        width: 100%;
+        height: 600px;
+        background: url(./333.jpg);
+        background-size: cover;/*设置图片背景大小*/
+        background-position: center;/*设置图片位置*/
+    }
+</style>
+<body>
+    <div class="demo1"></div>
+    <div class="demo2"></div>
+    <div class="demo3"></div>
+    <div class="demo4">
+        <p style="height: 800px;">123</p>
+    </div>
+    <div class="demo5">
+        <p style="height: 800px;">123</p>
+    </div>
+    <div class="demo6"></div>
+    <div class="demo7"></div>
+    <span style="height: 800px;display: block;"></span>
+</body>
+</html>

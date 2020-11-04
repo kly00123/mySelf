@@ -1,0 +1,74 @@
+。<!DOCTYPE html>
+<html>
+<head>
+	<title>基本模板</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+    </div>
+<script src="../js/vue.js"></script>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            }
+            else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            }
+            else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = null;
+            }
+        },
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+        preventDefault: function (event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false;
+            }
+        }
+    }
+
+</script>
+<script>
+    const app=new Vue({
+        el:"#app",
+        data:{
+            message:"123"
+        },
+        methods:{
+
+            }
+    })
+    //在JavaScript中，使用const修饰的标识符为常量，不可以再次赋值。再开发中，优先使用const，只有需要修改某一个标识符时，用let
+    //1.一旦给const修饰的标识符赋值后，不能更改 const a="a"; a="b"
+    //2.给const定义标识符，必须赋值 const name;
+    //3.常量的含义是指向的对象不能修改，但是其内部的属性可以修改,本质是因为const相当于是指针，指向的是内存地址，而对应的属性存储于内存地址里。内存地址不能变，但是内存地址里面的属性值可以变
+    // const obj={
+    //     name:'abc',
+    //     age:'18',
+    // }
+    // obj.name='ccc';
+    // obj.age=19
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+<script>
+    			function chunk(array,process,context){
+				setTimeout(function(){
+					var item=array.shift();
+					process.call(context,item);
+					if (array.length>0){
+						setTimeout(arguments.callee,100);
+					}
+				},100)
+			}
+				   var data=[12,13,14,15,11,111,1111,10,22,23,34,56,67,96,435,1234,456,756,324];
+	   function printValue(item){
+		   var div=document.getElementById("message");
+		   div.innerHTML+=item+"<br>";
+	   }
+	   chunk(data,printValue);
+</script>

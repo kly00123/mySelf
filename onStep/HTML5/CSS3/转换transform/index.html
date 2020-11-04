@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        margin:20px auto;
+        width: 200px;
+        height:200px;
+        background-color: crimson;
+        transition: transform 2s;
+    }
+    div:active{ /*移动*/
+        transform: translateY(500px);
+    }
+   div:nth-of-type(2):active{/*缩放 1为当前状态
+transform: scale(2);
+   transform: scaleY(2);
+   transform: scaleY(-2); 负数为转个圈
+   */
+       transform: scaleY(-2);
+   }
+   div:nth-of-type(3):active{/*旋转 加上X或Y在水平或者垂直方向上缩放*/
+       transform: rotate(60deg);  
+   }
+   div:nth-of-type(4):active{/*倾斜*/
+       transform: skew(30deg);
+   }
+</style>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</body>
+</html>

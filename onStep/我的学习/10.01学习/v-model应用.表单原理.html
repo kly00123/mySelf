@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>基本模板</title>
+</head>
+<body>
+    <div id="app">
+        <label for="male">
+            <input type="radio" id="male" name="sex" value="男" v-model="sex">
+        </label>
+        <label for="female">
+            <input type="radio" id="female" name="sex" value="女" v-model="sex">
+        </label>
+        {{sex}}</br>
+            <input type="checkbox" value="羽毛球" v-model="hobiit">羽毛球
+            <input type="checkbox" value="篮球" v-model="hobiit">篮球
+            <input type="checkbox" value="足球" v-model="hobiit">足球
+        {{hobiit}}</br>
+
+
+        <label for="agree">
+            <input type="checkbox" value="条款协议" v-model="isAgree">
+        </label>
+        <button :disabled="!isAgree">提交</button>
+        {{isAgree}}</br>
+
+        <label for="agree" v-for="item in hobbt" :for="item">
+            <input type="checkbox" :value="item" :id="item" v-model="hobiit">{{item}}
+        </label>
+    </div>
+
+    </div>
+    <script src="../../js/vue.js"></script>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            }
+            else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            }
+            else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler)
+            }
+            else {
+                element["on" + type] = null;
+            }
+        },
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+        preventDefault: function (event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false;
+            }
+        }
+    }
+
+</script>
+<script>
+    //type表示样式，name代表同一组，也就是不能重复选（单选框），value是点击后获取的信息，绑定了v-model可以不用写name属性。
+    const app=new Vue({
+        el:"#app",
+        data:{
+            sex:"男", 
+            hobiit:[],//复选框对应数组类型
+            isAgree:false,//单选框对应布尔值 
+            hobbt:['篮球','足球','羽毛去','品乓球','飞行求'] //注意第四个动态绑定了id 必须在label里动态绑定for一一对应
+        },
+        methods:{
+
+            }
+    })
+</script>
+</body>
+</html>

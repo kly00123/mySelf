@@ -1,0 +1,14 @@
+<script>
+    obj={
+        name:'klyu',
+        age:18,
+        height:1.98
+    }
+    如果我想把对象属性一一取出来
+    以前是这样写的:
+    const name=obj.name;
+    const age = obj.age;
+    ES6新语法:跟顺序没有关系,会根据对象的名字去找
+   const {name,height,age} = obj;
+   console.log(name);
+</script>

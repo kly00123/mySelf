@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div>
+         <input type="text" id="mess">
+         <button id="btn1">保存数据</button>
+         <button id="btn2">获取数据</button>
+         <button id="btn3">删除数据</button>
+     </div>
+     <script>
+         //1.sessionStorage特点：
+         //1.1 数据存储到本地，大概只有5MB左右
+         //1.2 数据存储在当前页面，关闭以后缓存消失
+         document.getElementById('btn1').onclick=function(){
+             var name = document.getElementById('mess').value;
+             window.sessionStorage.setItem("username",name);
+         }
+         document.getElementById('btn2').onclick=function(){
+            let name = window.sessionStorage.getItem("username");
+             alert(name)
+         }
+         document.getElementById('btn3').onclick=function(){
+            let name = window.sessionStorage.removeItem("username");
+         }
+
+
+        //2. localStorage特点：
+        //2.1 储存量大概在20MB足有
+        //2.2 不同浏览器不能共享数据，但是同一个浏览器可以
+        //2.3 永久生效，数据时存储在硬盘上，并不会随着页面的关闭而消失
+        //  document.getElementById('btn1').onclick=function(){
+        //      var name = document.getElementById('mess').value;
+        //      window.localStorage.setItem("username",name);
+        //  }
+        //           document.getElementById('btn2').onclick=function(){
+        //     let name = window.localStorage.getItem("username");
+        //      alert(name)
+        //  }
+        //  document.getElementById('btn3').onclick=function(){
+        //     let name = window.localStorage.removeItem("username");
+        //  }
+     </script>
+</body>
+</html>

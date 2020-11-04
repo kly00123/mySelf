@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   .demo1{  /*线性渐变
+ 是属于background的一个属性。linear-gradient（方向，开始颜色 位置，颜色2 位置，颜色3 位置）
+       方向：to top:0 deg 
+             to right:90deg
+             to bottom:180deg --默认
+             to left:270deg
+       */
+       width: 400px;
+       height: 400px;
+       background: linear-gradient(130deg,red 0%,blue 25%,pink 75%,green 100%);
+   }
+   .demo2{/*径向渐变
+         默认是在正中心向外
+   */
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(red,blue);
+   }
+   .demo3{/*重复渐变
+
+   */
+width: 400px;
+height: 400px;
+background: repeating-radial-gradient(circle closest-side at center center,#fff 0%,#fff 10%,#000 10%, #000 20%);
+   }
+   .demo4{
+    width: 400px;
+height: 400px;
+background: repeating-linear-gradient(45deg,#fff 0%,#fff 10%,#000 10%, #000 20%);
+   }
+</style>
+<body>
+    <div class="demo1"></div>
+    <div class="demo2"></div>
+    <div class="demo3"></div>
+    <div class="demo4"></div>
+</body>
+</html>
