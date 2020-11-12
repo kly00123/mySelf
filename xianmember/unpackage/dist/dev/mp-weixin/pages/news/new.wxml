@@ -1,0 +1,1 @@
+<view class="page"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="__i0__"><view data-event-opts="{{[['tap',[['goDetails',['$0'],[[['list','',__i0__]]]]]]]}}" class="bulletin" bindtap="__e"><view><view class="h3 _h3">{{item.title}}</view><view class="date">{{item.createTime}}</view></view></view></block></view>

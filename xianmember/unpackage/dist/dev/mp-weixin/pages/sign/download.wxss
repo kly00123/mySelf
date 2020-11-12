@@ -1,0 +1,76 @@
+
+page {
+	font-size: 12px;
+}
+.content {
+	width: 90%;
+	margin: 0 auto;
+}
+.tubiao {
+	width: 44%;
+	margin: 0px auto 40px auto;
+	padding-top: 30px;
+	text-align: center;
+}
+.tubiao image {
+	width: 260rpx;
+	height: 260rpx;
+}
+.fenlsid_and {
+	background: #78bc43;
+	-webkit-border-radius: 8px;
+	        border-radius: 8px;
+	width: 226px;
+	height: 63px;
+	margin: 0 auto;
+	margin-top: 18px;
+}
+.fenlsid_and ._img {
+	float: left;
+	width: 40px;
+	margin: 8px 20px 0 22px;
+}
+.and_2 {
+	float: left;
+	color: #fff;
+	padding-top: 12px;
+}
+.and {
+	font-size: 18px
+}
+.miaoshu {
+	margin-top: 93px;
+	border-top: 1px #e4e4e4 solid
+}
+.miaoshu_t {
+	padding-top: 20px;
+}
+.miaoshu_t ._span {
+	color: #515151;
+	font-size: 14px;
+	padding-left: 10px;
+	line-height: 20px;
+}
+.miaoshu_t ._p {
+	color: #a5a5a5;
+	font-size: 12px;
+	padding-left: 14px;
+	padding-top: 10px;
+}
+.erwei {
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 0px;
+	margin-top: 40px;
+	text-align: center;
+	padding-bottom: 40px;
+}
+.erwei ._img {
+	width: 100%;
+}
+.erwei ._p {
+	color: #a5a5a5;
+	line-height: 28px;
+	font-size: 13px;
+}
+

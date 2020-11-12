@@ -1,0 +1,305 @@
+
+page {
+	background-color: #FFFFFF;
+}
+.card {
+	font-size: 14px;
+	position: relative;
+	overflow: hidden;
+	-webkit-border-radius: 5px;
+	        border-radius: 5px;
+	background-color: #fff;
+	background-clip: padding-box;
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
+	        box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.content {
+	margin: 0 20px;
+}
+.table-view {
+	padding: 0px 20rpx 20rpx 20rpx;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 30px;
+}
+.table-view ._li {
+	list-style-type: none;
+	font-size: 14px;
+}
+.table-view-li:last-child::after {
+	height: 0px;
+}
+.table-view-li {
+	position: relative;
+	overflow: hidden;
+	padding: 11px 15px;
+}
+.table-view-li::after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 15px;
+	height: 1px;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	        transform: scaleY(.5);
+	background-color: #c8c7cc;
+}
+.textRed {
+	font-size: 28rpx;
+	font-family: PingFang SC;
+	font-weight: bold;
+	color: #ed3132;
+}
+.text_P {
+	font-size: 28rpx;
+	font-weight: 600;
+	margin: 14rpx 0;
+	color: #4d4d4d;
+}
+.media-body {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center
+}
+.media-body-a-img{		
+	width: 60rpx;
+	height: 60rpx;
+	-webkit-border-radius:40rpx;
+	        border-radius:40rpx;
+	margin: 0 10rpx;
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
+	        box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
+	vertical-align:middle;
+}
+.title {
+	height: 128rpx;
+	background: rgba(255, 255, 255, 1);
+	opacity: 1;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	text-align: center;
+	line-height: 128rpx;
+	padding-top: 24rpx;
+	font-size: 34rpx;
+	font-family: PingFang SC;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+	opacity: 1;
+}
+.left {
+
+	width: 24rpx;
+	height: 48rpx;
+	margin-left: 24rpx;
+}
+.leftline {
+
+	width: 1rpx;
+	height: 118rpx;
+	background: rgba(235, 235, 235, 1);
+	opacity: 1;
+}
+.uni-ordernum {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	padding-left: 24rpx;
+	padding-right: 24rpx;
+	border-top: 1rpx solid #F5F5F5;
+	height: 88rpx;
+	line-height: 88rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	background: rgba(255, 255, 255, 1);
+	opacity: 1;
+	font-size: 32rpx;
+	font-family: PingFang SC;
+	font-weight: 400;
+	color: rgba(255, 144, 0, 1);
+	opacity: 1;
+}
+.uni-order {
+
+	display: -webkit-box;
+
+	display: -webkit-flex;
+
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	/* height: 376rpx; */
+	background: rgba(255, 255, 255, 1);
+	opacity: 1;
+	margin-top: 20rpx;
+}
+.uni-order-f {
+
+	display: -webkit-box;
+
+	display: -webkit-flex;
+
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	margin-left: 24rpx;
+	/* padding-right: 24rpx; */
+	/* padding-top: 26rpx; */
+	font-size: 30rpx;
+	font-family: PingFang SC;
+	font-weight: 400;
+	line-height: 94rpx;
+	border-bottom: 1rpx solid #F5F5F5;
+	color: rgba(51, 51, 51, 1);
+	opacity: 1;
+}
+.date {
+	/* height: 188rpx; */
+	background: rgba(255, 255, 255, 1);
+	opacity: 1;
+	margin-top: 20rpx;
+}
+.bulletin {
+	height: 568rpx;
+	background: rgba(255, 255, 255, 1);
+	opacity: 1;
+	margin-top: 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+}
+.bulletin-font {
+
+	font-size: 30rpx;
+	font-family: PingFang SC;
+	font-weight: 400;
+	margin-left: 24rpx;
+	color: rgba(51, 51, 51, 1);
+	opacity: 1;
+	margin-top: 26rpx;
+}
+.uni-photo {
+	width: 542rpx;
+	height: 380rpx;
+	background: rgba(245, 245, 245, 1);
+	opacity: 1;
+
+	display: -webkit-box;
+
+	display: -webkit-flex;
+
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-border-radius: 8rpx;
+	        border-radius: 8rpx;
+	text-align: center;
+	margin-top: 26rpx;
+	margin-left: 104rpx;
+	margin-right: 104rpx;
+}
+.bottom {
+
+	width: 100%;
+	height: 118rpx;
+	background: rgba(255, 255, 255, 1);
+	opacity: 1;
+	margin-top: 20rpx;
+	bottom: 0;
+	position: fixed;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+}
+.openvideo {
+
+	font-size: 34rpx;
+	font-family: PingFang SC;
+	font-weight: 400;
+	color: rgba(153, 153, 153, 1);
+	opacity: 1;
+	margin-left: 120rpx;
+	margin-right: 118rpx;
+}
+.btn {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	/* width: 162px; */
+	height: 46px;
+	/* background: linear-gradient(176deg, rgba(250, 92, 108, 1) 0%, rgba(250, 92, 108, 1) 7%, rgba(255, 87, 55, 1) 100%); */
+	background: rgb(237, 49, 50) none repeat scroll 0% 0%;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	opacity: 1;
+	-webkit-border-radius: 4px;
+	        border-radius: 4px;
+	font-size: 17px;
+	font-family: PingFang SC;
+	font-weight: 400;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 46px;
+}
+

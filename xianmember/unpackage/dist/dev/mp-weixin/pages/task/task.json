@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "任务大厅",
+  "navigationBarBackgroundColor": "#f02f30",
+  "navigationBarTextStyle": "",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#FF5254",
+  "usingComponents": {}
+}

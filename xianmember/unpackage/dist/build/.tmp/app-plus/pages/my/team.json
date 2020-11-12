@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的团队",
+  "navigationBarBackgroundColor": "#F04F43",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#FF5254",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

@@ -1,0 +1,89 @@
+{
+  "pages": [
+    "pages/sign/sign",
+    "pages/index/service",
+    "pages/sign/download",
+    "pages/sign/dow",
+    "pages/index/online",
+    "pages/sign/license",
+    "pages/sign/forgetpwd",
+    "pages/mytask/create",
+    "pages/sign/reg",
+    "pages/index/index",
+    "pages/news/new",
+    "pages/news/details",
+    "pages/invite/invite",
+    "pages/task/task",
+    "pages/live/payment",
+    "pages/index/qubo",
+    "pages/live/card",
+    "pages/live/live",
+    "pages/index/mch",
+    "pages/mytask/mytask",
+    "pages/mytask/mytaskorder",
+    "pages/mytask/mymission",
+    "pages/my/my",
+    "pages/my/personal",
+    "pages/my/taskDetails",
+    "pages/my/set",
+    "pages/my/pwd",
+    "pages/my/praise",
+    "pages/my/balance",
+    "pages/my/Withdrawals",
+    "pages/my/chooseback",
+    "pages/my/result",
+    "pages/my/record",
+    "pages/my/capital",
+    "pages/my/credit",
+    "pages/my/bank",
+    "pages/my/addbank",
+    "pages/my/team",
+    "pages/my/release",
+    "pages/my/taskmanmgent",
+    "pages/index/more"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#F04F43",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/uni-home.png",
+        "selectedIconPath": "static/home.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mytask/mytask",
+        "iconPath": "static/tsak.png",
+        "selectedIconPath": "static/task.png",
+        "text": "任务"
+      },
+      {
+        "pagePath": "pages/live/live",
+        "iconPath": "static/shops.png",
+        "selectedIconPath": "static/shop.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/my_g.png",
+        "selectedIconPath": "static/my.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "uploadFile": 30000
+  },
+  "usingComponents": {}
+}

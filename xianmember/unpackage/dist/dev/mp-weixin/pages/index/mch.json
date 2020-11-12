@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "商家入驻",
+  "navigationBarBackgroundColor": "#f02f30",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#FF5254",
+  "usingComponents": {}
+}

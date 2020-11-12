@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的任务",
+  "navigationBarBackgroundColor": "#F04F43",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#FF5254",
+  "usingComponents": {}
+}

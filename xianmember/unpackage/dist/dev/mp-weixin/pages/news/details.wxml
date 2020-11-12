@@ -1,0 +1,1 @@
+<view class="page"><view class="textfont">{{info.title}}</view><view class="textdate">{{''+info.createTime+''}}</view><view class="uni-textfont"><rich-text nodes="{{$root.f0}}"></rich-text></view></view>

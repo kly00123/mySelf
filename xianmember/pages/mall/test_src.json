@@ -1,0 +1,39 @@
+{
+	"Tab": [{
+		"id": 0,
+		"name": "TAB-A",
+		"content": {
+			"SubTab":
+			[
+				{
+					"SubTabName": "裤子",
+					"SubContent": ["休闲裤", ""]
+				}
+			]
+		}
+	},{
+		"id": 1,
+		"name": "TAB-A",
+		"content": {
+			"SubTab":
+			[
+				{
+					"SubTabName": "裤子",
+					"SubContent": ["休闲裤", ""]
+				}
+			]
+		}
+	},{
+		"id": 2,
+		"name": "TAB-A",
+		"content": {
+			"SubTab":
+			[
+				{
+					"SubTabName": "裤子",
+					"SubContent": ["休闲裤", ""]
+				}
+			]
+		}
+	}]
+}

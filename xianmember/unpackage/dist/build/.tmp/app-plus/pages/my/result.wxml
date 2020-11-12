@@ -1,0 +1,1 @@
+<view class="page"><view class="content"><image style="width:94rpx;height:94rpx;margin-top:148rpx;" src="../../static/gouxuan.png"></image><view class="content-font">提现申请已提交，等待处理...</view><view class="content-back">{{bankName+"("+money+"元)"}}</view><view data-event-opts="{{[['tap',[['goBack']]]]}}" class="btn" bindtap="__e">返回</view></view></view>
